@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../assets/fonts/icomoon.css"> -->
+    <title>index</title>
+  </head>
+  <body class="">
+    <%- include('./layout/header'); -%>
+
+    <main>
+      <div class="home-hero d-flex align-items-center">
+        <div>
+          <h1 class="display-1 fw-bold">URBNSTEP</h1>
+          <p class="text-light fw-bold">Your Step, Your Statement</p>
+          <button type="button" class="btn btn-primary">立即選購</button>
+        </div>
+      </div>
+
+      <!-- new Arrival -->
+      <section class="new-arrival">
+        <div class="container">
+         <div class="text-center title">
+          <div class="display-2 fw-bold">New Arrival</div>
+          <h2 class="d-block fw-bold letter-spacing-s">新品上市</h2>
+         </div>
+          <ul class="cardList">
+            <li class="card">
+              <a class="cardLink" href="javascript:;">
+                <span class="itemImg"><img src="../assets/images/new-1.png" alt="Monoverse"></span>
+                <span class="itemName fw-bold h5">Monoverse</span>
+                <span class="itemPrice fw-medium">NT$2,600</span>
+              </a>
+            </li>
+            <li class="card">
+              <a class="cardLink" href="javascript:;">
+                <span class="itemImg"><img src="../assets/images/new-2.png" alt="PLATFORM 404"></span>
+                <span class="itemName fw-bold h5">PLATFORM 404</span>
+                <span class="itemPrice fw-medium">NT$2,600</span>
+              </a>
+            </li>
+            <li class="card">
+              <a class="cardLink" href="javascript:;">
+                <span class="itemImg"><img src="../assets/images/new-3.png" alt="URBN Force"></span>
+                <span class="itemName fw-bold h5">URBN Force</span>
+                <span class="itemPrice fw-medium">NT$3,200</span>
+              </a>
+            </li>
+            <li class="card">
+              <a class="cardLink" href="javascript:;">
+                <span class="itemImg"><img src="../assets/images/new-4.png" alt="Mode90"></span>
+                <span class="itemName fw-bold h5">Mode90</span>
+                <span class="itemPrice fw-medium">NT$4,000</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 補貨 -->
+       <section class="hotsell">
+        <div class="container">
+          <h2 class="fw-bold letter-spacing-s">熱銷補貨 </h2>
+          <div class="swiper">
+            <div class="cardList swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <a class="cardLink" href="javascript:;">
+                    <span class="itemImg"><img loading="lazy" src="../assets/images/product-3.png" alt="product-3"></span>
+                    <span class="itemLabel d-flex justify-content-center align-items-center p-sm text-highlight">人氣 No.1</span>
+                  </a>
+                </div>
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <a class="cardLink" href="javascript:;">
+                    <span class="itemImg"><img loading="lazy" src="../assets/images/product.png" alt="product"></span>
+                    <span class="itemLabel d-flex justify-content-center align-items-center p-sm text-highlight">人氣 No.1</span>
+                  </a>
+                </div>
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <a class="cardLink" href="javascript:;">
+                    <span class="itemImg"><img loading="lazy" src="../assets/images/product-6.png" alt="product-6"></span>
+                    <span class="itemLabel d-flex justify-content-center align-items-center p-sm text-highlight">人氣 No.1</span>
+                  </a>
+                </div>
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <a class="cardLink" href="javascript:;">
+                    <span class="itemImg"><img loading="lazy" src="../assets/images/product-4.png" alt="product-4"></span>
+                    <span class="itemLabel d-flex justify-content-center align-items-center p-sm text-highlight">人氣 No.1</span>
+                  </a>
+                </div>
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+       </section>
+
+       <section class="homeCallToAction">
+        <div class="background">
+          
+        </div>
+        <!-- <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="banner d-flex justify-content-center align-items-center">
+                <div>
+                  <div><span>URBNSTEP</span><span>x</span><span>Kevin Chen</span><br><span>跨界聯名，限量發售</span></div>
+                  <div>新銳漫畫家 Kevin Chen 親自操刀設計，街頭能量全面引爆！</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+       </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

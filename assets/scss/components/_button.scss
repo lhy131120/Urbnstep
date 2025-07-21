@@ -1,0 +1,37 @@
+.btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  line-height: $line-height;
+  transition: all .3s ease;
+  letter-spacing: $letter-spacing-s;
+  font-size: 1rem;
+  border-radius: $radius-sm;
+
+  // button size
+  &-sm {
+    padding: .5rem 1rem;
+  }
+
+  // button color size
+  &-primary {
+    background-color: $primary-300;
+    &:hover {
+      color: $primary-500;
+    }
+    &:focus {
+      filter: drop-shadow(0px 0px 3px $primary-300);
+    }
+  }
+
+  &-netural {
+    background-color: $neutral-900;
+    color: $light;
+    &:hover {
+      background-color: $neutral-700;
+    }
+    &:focus {
+      filter: drop-shadow(0px 0px 3px rgba($neutral-900, 0.1));
+    }
+  }
+
+}

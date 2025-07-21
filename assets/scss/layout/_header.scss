@@ -1,0 +1,75 @@
+.header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include mobile() {
+    padding: .75rem 0 0 0;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    margin-left: 3rem;
+    margin-right: auto;
+    @include mobile() {
+      order: 3;
+      width: 100%;
+      margin: .75rem 0 0 0;
+    }
+    ul {
+      gap: 2.5rem;
+      @include mobile() {
+        gap: 0;
+      }
+    }
+
+    li {
+      @include mobile() {
+        width: 50%;
+        text-align: center;
+      }
+    }
+
+    a {
+      font-weight: 500;
+      padding: .75rem 0;
+
+      &.products {
+        @include mobile() {
+          background-color: $primary-200;
+        }
+      }
+
+      &.about {
+        @include mobile() {
+          background-color: $primary-100;
+        }
+      }
+    }
+  }
+
+  .login-icon {
+    line-height: 0;
+    width: 3rem;
+    height: 3rem;
+
+    span {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: contain;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url('/assets/images/icon-login.svg');
+      }
+    }
+  }
+}

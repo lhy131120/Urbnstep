@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import './variable';
+@import './mixin';
+@import './reset';
+@import "./base";
+
+// @components
+@import './components/button';
+@import './components/card';
+
+
+@import './layout/header';
+@import './layout/footer';
+
+
+@import './pages/index';
+
