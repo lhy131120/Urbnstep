@@ -1,5 +1,7 @@
 import Swiper from "swiper";
-import "swiper/css";
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
+
+import 'swiper/css/bundle';
 
 import "./assets/scss/all.scss";
 
@@ -24,6 +26,28 @@ document.addEventListener("DOMContentLoaded", () => {
           spaceBetween: 24
         }
       }
+    })
+  }
+
+  if(document.querySelector(".homeCallToAction")) {
+    const swiper = new Swiper('.homeCallToAction .swiper', {
+      modules: [Autoplay, EffectFade, Pagination],
+      slidesPerView: 1,
+      effect: "fade",
+      crossFade: true,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true
+      },
+      pagination: {
+        el: '.homeCallToAction .swiper-pagination',
+        clickable: true,
+        renderBullet: (index, className) => {
+          return `<span class=${className}>${index + 1}</span>`
+        } 
+      },
     })
   }
 });

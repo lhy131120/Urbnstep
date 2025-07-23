@@ -3,20 +3,20 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  background-image: url('/assets/images/banner.png');
+  background-image: url("/assets/images/banner.png");
   padding: 0 15%;
-  transition: all .3s ease;
-  
+  transition: all 0.3s ease;
+
   @include mobile() {
     aspect-ratio: 375 / 480;
     padding: 0 1.5rem;
-    background-image: url('/assets/images/banner-sm.png');
+    background-image: url("/assets/images/banner-sm.png");
   }
 
   h1 {
     @include mobile() {
       font-size: $display-2;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -42,11 +42,11 @@
       }
     }
     h2 {
-      margin-top: .75rem;
+      margin-top: 0.75rem;
       margin-bottom: 0;
       padding: 0;
       @include mobile() {
-        margin-top: .5rem;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -75,19 +75,21 @@
 .homeCallToAction {
   overflow: hidden;
   padding: 3rem 0;
+  position: relative;
   @include mobile() {
     padding: 1.5rem 0;
-  } 
+  }
   .background {
-    position: relative;
     aspect-ratio: 1920 / 470;
+    text-align: center;
     background: no-repeat url("/assets/images/banner-co-branded.png") 50% 50% / cover;
     @include mobile() {
-      padding: 1.5rem 0;
       aspect-ratio: 375 / 450;
       background: no-repeat url("/assets/images/banner-co-branded-sm.png") 50% 50% / cover;
+      max-height: 450px;
+      width: 100%;
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 3rem;
         height: 3rem;
@@ -96,7 +98,7 @@
         background: no-repeat url("/assets/images/star.svg") 50% 50% / cover;
       }
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         width: 76px;
         height: 64px;
@@ -106,5 +108,176 @@
       }
     }
   }
+  .bannerTextWrap {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px .75rem;
+
+    @include mobile() {
+      padding: 4rem .75rem;
+    }
+    
+    .bannerText {
+      position: relative;
+      text-align: center;
+      color: $light;
+      font-weight: 700;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        left: -32px;
+        top: -32px;
+        background: no-repeat url("/assets/images/star.svg") 50% 50% / cover;
+        @include mobile() {
+          content: none;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 76px;
+        height: 64px;
+        bottom: 32px;
+        right: -40px;
+        background: no-repeat url("/assets/images/sparkle.svg") 50% 50% / cover;
+        @include mobile() {
+          content: none;
+        }
+      }
+    }
+
+    .mainText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 1.5rem;
+      margin-bottom: 1rem;
+      
+      @include mobile() {
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+      & > span {
+        display: block;
+      }
+      & > span:not(:nth-child(2)) {
+        font-size: $display-2;
+        line-height: $line-height-s;
+        letter-spacing: $letter-spacing-s;
+        
+        @include mobile() {
+          font-size: 2rem;
+        }
+      }
+
+      & > span:nth-child(2) {
+        color: $text-highlight;
+        font-size: $h1;
+        line-height: $line-height-s;
+        letter-spacing: $letter-spacing-s;
+        
+        @include mobile() {
+          font-size: $h3;
+        }
+      }
+    }
+
+    .subText {
+      font-size: $h2;
+      line-height: $line-height-s;
+      margin-bottom: 2rem;
+
+      @include mobile() {
+        font-size: $h5;
+      }
+    }
+
+    p {
+      margin-bottom: 3rem;
+      color: $text-muted;
+      font-weight: 400;
+      font-size: $h5;
+      text-align: center;
+
+      @include mobile() {
+        font-size: $h6;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+  }
 }
 
+// section series
+.series {
+  .cardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    @include pad {
+      gap: 0.75rem;
+    }
+    .card {
+      width: calc((100% - 72px) / 4);
+      @include pad {
+        width: calc((100% - 12px) / 2);
+      }
+
+      .cardLink {
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: rgba($color: #000000, $alpha: 0.4);
+          z-index: 1;
+        }
+
+        & > span {
+          margin-bottom: 0;
+          padding: 0;
+        }
+
+        .itemLabel {
+          background-color: transparent;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          color: $light;
+          flex-direction: column;
+          gap: 0.5rem;
+          z-index: 2;
+
+          & > span {
+            text-align: center;
+            transition: all 0.3s ease;
+            @include mobile() {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        &:hover {
+          .itemImg {
+            opacity: inherit;
+          }
+
+          .itemLabel {
+            & > span:first-child {
+              color: $primary-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
