@@ -53,22 +53,20 @@
 
     span {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       width: 1.5rem;
       height: 1.5rem;
       font-size: 0;
 
       &:before {
-        content: '';
+        content: '\e90c';
+        font-family: 'icomoon';
         display: block;
         width: 1.5rem;
         height: 1.5rem;
-        background-size: contain;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-image: url('/assets/images/icon-login.svg');
+        color: #000;
+        font-size: 24px;
+        line-height: 24px;
       }
     }
   }

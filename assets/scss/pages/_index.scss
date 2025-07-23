@@ -281,3 +281,55 @@
     }
   }
 }
+
+
+.wearStyle {
+  .list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: .5rem;
+
+    @include pad() {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    & > .col {
+      flex-direction: column;
+    }
+    
+    .col {
+      display: flex;
+      gap: .5rem;
+
+    }
+
+    .col:nth-child(2) {
+      .imgBlk {
+        width: calc((100% - 8px) / 2);
+      }
+    }
+
+    .imgBlk {
+      width: 50%;
+      &-2x {
+        width: 100%;
+      }
+    }
+  }
+
+  .swiper {
+    display: none;
+    visibility: none;
+    opacity: 0;
+
+    @include pad() {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
