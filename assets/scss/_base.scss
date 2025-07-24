@@ -10,14 +10,13 @@ body {
 a {
   text-decoration: none;
   color: $neutral-900;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     color: $neutral-600;
   }
 
   &:focus {
-
   }
 }
 
@@ -27,29 +26,35 @@ a {
   margin: 0 auto;
 }
 
-// font-size 
+// font-size
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: $h1;
   line-height: $line-height-s;
 }
-h2, .h2 {
+h2,
+.h2 {
   font-size: $h2;
   line-height: $line-height-s;
 }
-h3, .h3 {
+h3,
+.h3 {
   font-size: $h3;
   line-height: $line-height-s;
 }
-h4, .h4 {
+h4,
+.h4 {
   font-size: $h4;
   line-height: $line-height-s;
 }
-h5, .h5 {
+h5,
+.h5 {
   font-size: $h5;
   line-height: $line-height-s;
 }
-h6, .h6 {
+h6,
+.h6 {
   font-size: $h6;
   line-height: $line-height-s;
 }
@@ -69,6 +74,10 @@ h6, .h6 {
 
 p {
   letter-spacing: $letter-spacing-s;
+  margin-bottom: 1rem;
+  @include mobile() {
+    margin-bottom: 0.75rem;
+  }
 }
 
 .p-xs {
@@ -127,7 +136,8 @@ p {
   font-weight: 500;
 }
 
-.fw-bold {
+.fw-bold,
+strong {
   font-weight: 700;
 }
 
@@ -147,7 +157,7 @@ p {
 
 // flex attr
 .d-flex {
-  display: flex!important;
+  display: flex !important;
 }
 
 .align-items-center {
@@ -174,7 +184,85 @@ p {
 .letter-spacing-md {
   letter-spacing: $letter-spacing;
 }
-// content 
+
+// list
+
+ul.list-dot,
+ul.list-mast,
+ul.list-arrow {
+  & > li {
+    position: relative;
+    padding-left: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background-color: $neutral-900;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+ul.list-dot > li {
+  & > span:last-child {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid $neutral-900;
+  }
+}
+
+ul.list-mast > li {
+  padding-left: 0.75rem;
+  border-left: 3px solid $neutral-300;
+  &:before {
+    content: none;
+  }
+}
+
+ul.list-arrow > li {
+  padding-left: 1.75rem;
+
+  &:not(:last-child) {
+    margin-bottom: 0.25rem;
+  }
+
+  &:before {
+    width: 20px;
+    height: 20px;
+    border-radius: inherit;
+    background-color: transparent;
+    background-size: 20px 20px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.5001 3.125C17.5001 2.95924 17.4342 2.80027 17.317 2.68306C17.1998 2.56585 17.0408 2.5 16.8751 2.5H9.37506C9.2093 2.5 9.05033 2.56585 8.93312 2.68306C8.81591 2.80027 8.75006 2.95924 8.75006 3.125C8.75006 3.29076 8.81591 3.44973 8.93312 3.56694C9.05033 3.68415 9.2093 3.75 9.37506 3.75H15.3663L2.68256 16.4325C2.62445 16.4906 2.57835 16.5596 2.5469 16.6355C2.51545 16.7114 2.49927 16.7928 2.49927 16.875C2.49927 16.9572 2.51545 17.0386 2.5469 17.1145C2.57835 17.1904 2.62445 17.2594 2.68256 17.3175C2.74067 17.3756 2.80965 17.4217 2.88558 17.4532C2.9615 17.4846 3.04288 17.5008 3.12506 17.5008C3.20724 17.5008 3.28861 17.4846 3.36454 17.4532C3.44046 17.4217 3.50945 17.3756 3.56756 17.3175L16.2501 4.63375V10.625C16.2501 10.7908 16.3159 10.9497 16.4331 11.0669C16.5503 11.1842 16.7093 11.25 16.8751 11.25C17.0408 11.25 17.1998 11.1842 17.317 11.0669C17.4342 10.9497 17.5001 10.7908 17.5001 10.625V3.125Z' fill='%2357A203'/%3E%3C/svg%3E%0A");
+  }
+
+  & > a {
+    display: inline-block;
+    color: $primary-400;
+    text-decoration: none;
+    border-bottom: 1px solid $primary-400;
+    line-height: 2.5;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $neutral-900;
+      border-bottom-color: $neutral-900;
+    }
+  }
+}
+
+// content
 section {
   padding: 4rem 0;
   @include mobile() {
@@ -188,7 +276,7 @@ section {
   h2 {
     margin-bottom: 1rem;
     padding: 5px 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     @include mobile() {
       font-size: $h4;
     }
@@ -206,7 +294,7 @@ section {
   .swiper-pagination {
     font-size: 0;
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     justify-content: center;
     @include mobile() {
       display: none;
@@ -215,7 +303,7 @@ section {
 
   .swiper-pagination-bullet {
     background-color: $neutral-400;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &-active {
       background-color: $neutral-600;
