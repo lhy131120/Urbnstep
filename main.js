@@ -7,6 +7,21 @@ import "./assets/fonts/icomoon.css";
 import "./assets/scss/all.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelectorAll('.btn-heart')) {
+    const btns = document.querySelectorAll('.btn-heart');
+    btns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        btn.classList.toggle('active');
+        const span = btn.querySelector('span');
+        if (btn.classList.contains('active')) {
+          span.textContent = '己收藏';
+        } else {
+          span.textContent = '加入收藏';
+        }
+      })
+    })
+  }
   if (document.querySelector(".hotsell")) {
     const swiper = new Swiper(".hotsell .swiper", {
       spaceBetween: 16,

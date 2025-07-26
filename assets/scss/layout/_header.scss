@@ -44,6 +44,12 @@
         }
       }
     }
+
+    .products & {
+      @include mobile() {
+        display: none;
+      }
+    }
   }
 
   .login-icon {

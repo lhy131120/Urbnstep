@@ -1,11 +1,12 @@
 .btn {
   display: inline-block;
+  text-align: center;
   padding: .75rem 1.5rem;
   line-height: $line-height;
-  transition: all .3s ease;
   letter-spacing: $letter-spacing-s;
   font-size: 1rem;
   border-radius: $radius-sm;
+  transition: all .3s ease;
 
   // button size
   &-sm {
@@ -34,4 +35,47 @@
     }
   }
 
+  &-outline {
+    background-color: $light;
+    border: 1px solid $neutral-900;
+    color: $neutral-900;
+
+    &:hover,
+    &.selected {
+      background-color: $neutral-900;
+      border: 1px solid $neutral-900;
+      color: $light;
+    }
+
+    & > span {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+      padding: 0;
+
+      &:before {
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-family: 'icomoon';
+        font-size: 20px;
+        line-height: 20px;
+      }
+      
+    }
+
+    &.btn-heart > span:before {
+      content: '\e90b';
+    }
+
+    &.btn-heart.active > span:before {
+      content: '\e90f';
+    }
+
+    &.btn-bag > span:before {
+      content: '\e90a';
+    }
+  }
 }

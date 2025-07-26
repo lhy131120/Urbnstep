@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品列表</title>
+  </head>
+  <body class="products">
+    <%- include('./layout/header'); -%>
+    <main>
+      <section class="section-productList">
+        <div class="container">
+          <nav class="breadcrumbWrap">
+            <ol class="breadcrumb d-flex align-items-center">
+              <li><a href="javascript:;">首頁</a></li>
+              <li><a href="javascript:;">女鞋</a></li>
+              <li><a href="javascript:;" class="selected">所有商品</a></li>
+            </ol>
+          </nav>
+
+          <h2 class="h3 fw-bold">所有商品</h2>
+
+          <div class="productList d-flex">
+            <aside class="productList-category">
+              <ul class="d-flex flex-column gap-m">
+                <li class="active"><a href="javascript:;">所有商品</a></li>
+                <li><a href="javascript:;">慢跑鞋</a></li>
+                <li><a href="javascript:;">滑板鞋</a></li>
+                <li><a href="javascript:;">厚底鞋</a></li>
+                <li><a href="javascript:;">限定 / 聯名企劃</a></li>
+              </ul>
+            </aside>
+            <div class="productList-content">
+              <ul class="productList-content-list">
+                <li class="item">
+                  <a class="d-flex flex-column" href="./product-details.html">
+                    <span class="img"
+                      ><img src="/assets/images/product.png" alt="PLATFORM 404"
+                    /></span>
+                    <span class="name fw-bold">PLATFORM 404</span>
+                    <span class="price">NT$2,600</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img
+                        src="/assets/images/product-1.png"
+                        alt="PLATFORM 404"
+                    /></span>
+                    <span class="name fw-bold">PLATFORM 404</span>
+                    <span class="price">NT$2,600</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-2.png" alt="VM001"
+                    /></span>
+                    <span class="name fw-bold">VM001</span>
+                    <span class="price">NT$2,600</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-3.png" alt="Melty Kiss"
+                    /></span>
+                    <span class="name fw-bold">Melty Kiss</span>
+                    <span class="price">NT$4,000</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-4.png" alt="BOOMBLOK"
+                    /></span>
+                    <span class="name fw-bold">BOOMBLOK</span>
+                    <span class="price">NT$3,200</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-5.png" alt="BOOMBLOK"
+                    /></span>
+                    <span class="name fw-bold">BOOMBLOK</span>
+                    <span class="price">NT$3,200</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-6.png" alt="R:UNER"
+                    /></span>
+                    <span class="name fw-bold">R:UNER</span>
+                    <span class="price">NT$4,000</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-7.png" alt="Sugar Snap"
+                    /></span>
+                    <span class="name fw-bold">Sugar Snap</span>
+                    <span class="price">NT$4,000</span>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="d-flex flex-column" href="javascript:;">
+                    <span class="img"
+                      ><img src="/assets/images/product-8.png" alt="Neofoam"
+                    /></span>
+                    <span class="name fw-bold">Neofoam</span>
+                    <span class="price">NT$4,000</span>
+                  </a>
+                </li>
+              </ul>
+              <%- include('./layout/pagination'); -%>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

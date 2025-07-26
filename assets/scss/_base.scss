@@ -32,31 +32,37 @@ h1,
 .h1 {
   font-size: $h1;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 h2,
 .h2 {
   font-size: $h2;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 h3,
 .h3 {
   font-size: $h3;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 h4,
 .h4 {
   font-size: $h4;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 h5,
 .h5 {
   font-size: $h5;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 h6,
 .h6 {
   font-size: $h6;
   line-height: $line-height-s;
+  letter-spacing: $letter-spacing-s;
 }
 
 .display-1 {
@@ -253,7 +259,7 @@ ul.list-arrow > li {
     text-decoration: none;
     border-bottom: 1px solid $primary-400;
     line-height: 2.5;
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: $neutral-900;
@@ -265,6 +271,17 @@ ul.list-arrow > li {
 // content
 section {
   padding: 4rem 0;
+
+  &.withText {
+    padding: 3rem 0;
+  }
+
+  &.section-productList {
+    padding: 2rem 0;
+    @include mobile() {
+      padding: 1rem 0;
+    }
+  }
   @include mobile() {
     padding: 2.5rem 0;
   }
@@ -279,6 +296,51 @@ section {
     transition: all 0.3s ease;
     @include mobile() {
       font-size: $h4;
+    }
+  }
+}
+
+// Breadcrumb
+
+.breadcrumbWrap {
+  margin-bottom: 1.5rem;
+
+  ol {
+    gap: 2rem;
+    @include mobile() {
+      gap: 1.5rem;
+    }
+  }
+
+  li {
+    position: relative;
+
+    &:not(:last-child)::before {
+      content: "/";
+      width: 7px;
+      height: 100%;
+      position: absolute;
+      display: block;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $neutral-500;
+    }
+
+    a {
+      color: $neutral-600;
+      letter-spacing: $letter-spacing-s;
+      transition: color 0.3s ease;
+
+      @include mobile() {
+        font-size: $p-sm;
+      }
+
+      &:hover,
+      &:focus,
+      &.selected {
+        color: $neutral-900;
+      }
     }
   }
 }
